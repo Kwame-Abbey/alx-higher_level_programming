@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+"""Defines a rectangle"""
+
+
 class Rectangle:
     """A rectangle class with two private instance attributes"""
 
