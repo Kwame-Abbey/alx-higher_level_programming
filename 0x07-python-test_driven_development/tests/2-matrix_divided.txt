@@ -1,0 +1,107 @@
+``matrix_divided`` module
+===================
+
+The ``matrix divided()`` function divides all elements of a given matrix by a given divisor
+
+Import Module:
+	>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+div is zero:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 0)
+	Traceback (most recent call last):
+	    ...
+	ZeroDivisionError: division by zero
+
+div is neither float nor integer:
+	>>> matrix = [[1, 2, 3], [4, 5, 6]]
+	>>> matrix_divided(matrix, 'a')
+	Traceback (most recent call last):
+	    ...
+	TypeError: div must be a number
+
+        >>> matrix = [[1, 2, 3], [4, 5, 6]]
+        >>> matrix_divided(matrix, (1, 3))
+        Traceback (most recent call last):
+            ...
+        TypeError: div must be a number
+
+        >>> matrix = [[1, 2, 3], [4, 5, 6]]
+        >>> matrix_divided(matrix, [1])
+        Traceback (most recent call last):
+            ...
+        TypeError: div must be a number
+
+        >>> matrix = [[1, 2, 3], [4, 5, 6]]
+        >>> matrix_divided(matrix, {1})
+        Traceback (most recent call last):
+            ...
+        TypeError: div must be a number
+
+matrix is made up of only integers:
+        >>> matrix = [[1, 2, 3], [4, 5, 6]]
+        >>> matrix_divided(matrix, 2)
+	[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+matrix is made up of only floats:
+        >>> matrix = [[1.1, 2.2, 3.3], [4.4, 5.5, 6.6]]
+        >>> matrix_divided(matrix, 2)
+	[[0.55, 1.1, 1.65], [2.2, 2.75, 3.3]]
+
+matrix is made up of both integers and floats:
+        >>> matrix = [[1.1, 2, 3.3], [4, 5.5, 6]]
+        >>> matrix_divided(matrix, 2)
+	[[0.55, 1.0, 1.65], [2.0, 2.75, 3.0]]
+
+row sizes not equal:
+        >>> matrix = [[1, 2, 3], [4, 5, 6, 5]]
+        >>> matrix_divided(matrix, 2)
+	Traceback (most recent call last):
+	    ...
+	TypeError: Each row of the matrix must have the same size
+
+        >>> matrix = [[1, 2, 3, 5 , 6], [4, 5, 6, 5]]
+        >>> matrix_divided(matrix, 2)
+        Traceback (most recent call last):
+            ...
+        TypeError: Each row of the matrix must have the same size
+
+some elements neither int or floats:
+        >>> matrix = [[1, 2, 3], [4, 5, 'a']]
+        >>> matrix_divided(matrix, 2)
+        Traceback (most recent call last):
+            ...
+        TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+large numbers as elements:
+        >>> matrix = [[1000000, 2000000, 3000000], [4000000, 5000000, 6000000]]
+        >>> matrix_divided(matrix, 2)
+	[[500000.0, 1000000.0, 1500000.0], [2000000.0, 2500000.0, 3000000.0]]
+
+div is float:
+        >>> matrix = [[1, 2, 3], [4, 5, 6]]
+        >>> matrix_divided(matrix, 2.5)
+	[[0.4, 0.8, 1.2], [1.6, 2.0, 2.4]]
+
+matrix contains negative numbers:
+        >>> matrix = [[-1, -2, -3], [-4, -5, -6]]
+        >>> matrix_divided(matrix, 2)
+	[[-0.5, -1.0, -1.5], [-2.0, -2.5, -3.0]]
+
+no arguments:
+	>>> matrix_divided()
+	Traceback (most recent call last):
+		...
+	TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+one argument:
+	 >>> matrix_divided([[1, 2, 3], [4, 5, 6]])
+         Traceback (most recent call last):
+                   ...
+         TypeError: matrix_divided() missing 1 required positional argument: 'div'
+
+more than two arguments:
+         >>> matrix_divided([1, 2, 3], 1, 3)
+         Traceback (most recent call last):
+                   ...
+         TypeError: matrix_divided() takes 2 positional arguments but 3 were given
