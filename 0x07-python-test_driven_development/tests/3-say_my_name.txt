@@ -1,0 +1,95 @@
+``3-say_my_name`` Module
+===================
+
+The ``say_my_name()`` function prints My name is <first name> <last name>
+
+Usage examples:
+
+Import Modules:
+	>>> say_my_name = __import__('3-say_my_name').say_my_name
+
+both are strings:
+	>>> say_my_name('abbey', 'kwame')
+	My name is abbey kwame
+
+one is not a string:
+	>>> say_my_name('abbey', 1)
+	Traceback (most recent call last):
+		...
+	TypeError: last_name must be a string
+
+        >>> say_my_name('abbey', [1])
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+        >>> say_my_name('abbey', (1, ))
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+        >>> say_my_name('abbey', {1})
+        Traceback (most recent call last):
+                ...
+        TypeError: last_name must be a string
+
+
+	>>> say_my_name(1, 'kwame')
+	Traceback (most recent call last):
+		...
+	TypeError: first_name must be a string
+
+        >>> say_my_name([1], 'kwame')
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name((1, ), 'kwame')
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name({1}, 'kwame')
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+None are strings:
+	>>> say_my_name(1, 2)
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name(1, [1, 3])
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+        >>> say_my_name({1, 2}, (1, 4))
+        Traceback (most recent call last):
+                ...
+        TypeError: first_name must be a string
+
+no arguments:
+	>>> say_my_name()
+	Traceback (most recent call last):
+		...
+	TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+one argument:
+	>>> say_my_name('abbey') #doctest: +REPORT_NDIFF
+	My name is abbey 
+
+more than 2 arguments:
+	>>> say_my_name('abbey', 'kwame', 'morgan')
+	Traceback (most recent call last):
+		...
+	TypeError: say_my_name() takes from 1 to 2 positional arguments but 3 were given
+
+first name is an empty string:
+	>>> say_my_name('', 'abbey')
+	My name is  abbey
+
+both are empty strings:
+	>>> say_my_name('', '')
+	My name is  
