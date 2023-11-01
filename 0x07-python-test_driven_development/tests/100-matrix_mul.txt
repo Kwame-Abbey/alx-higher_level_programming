@@ -61,7 +61,7 @@ non-rectangle a:
          >>> matrix_mul(m_a, m_b)
          Traceback (most recent call last):
                    ...
-         TypeError: each row of m_a must should be of the same size
+         TypeError: each row of m_a must be of the same size
 
 non-rectangle b:
          >>> m_a = [[1, 2], [3, 4]]
@@ -69,7 +69,7 @@ non-rectangle b:
          >>> matrix_mul(m_a, m_b)
          Traceback (most recent call last):
                    ...
-         TypeError: each row of m_b must should be of the same size
+         TypeError: each row of m_b must be of the same size
 
 one integer argument:
          >>> m_a = 1
