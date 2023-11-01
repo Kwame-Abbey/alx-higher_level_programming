@@ -116,3 +116,15 @@ one is None:
 	Traceback (most recent call last):
 		...
 	TypeError: b must be an integer
+
+a is inf:
+         >>> add_integer(float('inf'), 5)
+         Traceback (most recent call last):
+                   ...
+         OverflowError: cannot convert float infinity to integer
+
+a is NaN:
+         >>> add_integer(float('NaN'), 5)
+         Traceback (most recent call last):
+                   ...
+         ValueError: cannot convert float NaN to integer
