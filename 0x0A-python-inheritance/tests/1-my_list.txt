@@ -1,18 +1,16 @@
-The ``1-my_list`` module.
+The ``1-my_list`` module
 ===================
 
-``print_sorted()`` function prints the list, but sorted.
-
-Using ``1-my_list``
+Using ``MyList``
 -------------------
-Import Module:
-	>>> MyList = __import__('1-my_list').MyList
 
+import module:
+         >>> MyList = __import__("1-my_list").MyList
 
-Empty list:
-        >>> a = MyList()
-        >>> a.print_sorted()
-        []
+empty list:
+	 >>> a = MyList()
+	 >>> a.print_sorted()
+	 []
 
 append new elements:
 	 >>> a = MyList()
@@ -26,48 +24,25 @@ already sorted list:
          >>> a.print_sorted()
          [1, 2, 3]
 
-Positive integers:
-	>>> a = MyList()
-	>>> a.append(1)
-	>>> a.append(2)
-	>>> a.append(3)
-	>>> a.append(3)
-	>>> a.append(4)
-	>>> a.print_sorted()
-	[1, 2, 3, 3, 4]
-
 unsorted list:
-         >>> b = MyList()
-	 >>> b.append(1)
-	 >>> b.append(3)
-	 >>> b.append(2)
-         >>> print(b)
+         >>> a2 = MyList()
+	 >>> a2.append(1)
+	 >>> a2.append(3)
+	 >>> a2.append(2)
+         >>> print(a2)
 	 [1, 3, 2]
-	 >>> b.print_sorted()
+	 >>> a2.print_sorted()
 	 [1, 2, 3]
 
-Appending from highest to lowest:
-	>>> a = MyList()
-	>>> a.append(5)
-	>>> a.append(4)
-	>>> a.append(3)
-	>>> a.append(2)
-	>>> a.append(1)
-	>>> a.print_sorted()
-	[1, 2, 3, 4, 5]
+negative numbers:
+	 >>> a2.append(-4)
+	 >>> print(a2)
+         [1, 3, 2, -4]
+	 >>> a2.print_sorted()
+	 [-4, 1, 2, 3]
 
-Negative integers:
-	>>> a = MyList()
-	>>> a.append(-1)
-	>>> a.append(-2)
-	>>> a.append(-3)
-	>>> a.append(-4)
-	>>> a.append(-5)
-	>>> a.print_sorted()
-	[-5, -4, -3, -2, -1]
-
-Too many arguments:
-         >>> a.print_sorted(a)
+too many arguments:
+         >>> a.print_sorted(a2)
          Traceback (most recent call last):
                    ...
 	 TypeError: print_sorted() takes 1 positional argument but 2 were given
