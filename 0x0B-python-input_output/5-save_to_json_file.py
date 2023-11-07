@@ -1,4 +1,4 @@
-#!/usr/bin/pyhton3
+#!/usr/bin/python3
 """Defines writing to a text file using JSON representation"""
 
 import json
