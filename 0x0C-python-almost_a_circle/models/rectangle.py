@@ -63,7 +63,7 @@ class Rectangle(Base):
         """retrives value of y"""
         return self.__y
 
-    @x.setter
+    @y.setter
     def y(self, value):
         """modifies the value of y"""
         if type(value) is not int:
@@ -80,3 +80,8 @@ class Rectangle(Base):
         """prints in stdout the Rectangle instance with the character #"""
         for i in range(self.height):
             print(f"{'#' * self.width}")
+
+    def __str__(self):
+        """returns the readable string representation"""
+        return "[Rectangle] ({:d}) {:d}/{:d} - {:d}/{:d}" \
+            .format(self.id, self.x, self.y, self.width, self.height)
