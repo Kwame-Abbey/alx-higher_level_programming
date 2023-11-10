@@ -26,3 +26,16 @@ class Square(Rectangle):
         """Readable string representation"""
         return "[Square] ({:d}) {:d}/{:d} - {:d}" \
             .format(self.id, self.x, self.y, self.width)
+
+    def update(self, *args, **kwargs):
+        """assigns attributes"""
+        if len(args) != 0:
+            square_attr = ['id', 'size', 'x', 'y']
+            i = 0
+
+            for arg in args:
+                setattr(self, square_attr[i], arg)
+                i += 1
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
