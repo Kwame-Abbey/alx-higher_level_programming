@@ -3,6 +3,7 @@
 
 import json
 import csv
+from turtle import Turtle, Screen
 
 
 class Base:
@@ -73,9 +74,9 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """ serializes in csv format"""
         filename = cls.__name__ + ".csv"
-        if cls.__name__ is "Rectangle":
+        if cls.__name__ == "Rectangle":
             attrs = ["width", "height", "x", "y", "id"]
-        elif cls.__name__ is "Square":
+        elif cls.__name__ == "Square":
             attrs = ["size", "x", "y", "id"]
         with open(filename, 'w', newline="") as f:
             writer = csv.DictWriter(f, fieldnames=attrs)
@@ -101,3 +102,36 @@ class Base:
             return [cls.create(**obj) for obj in new_list]
         except FileNotFoundError:
             return [[]]
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """opens a window and draws all the Rectangles and Squares"""
+        screen = Screen()
+        screen.setup(width=600, height=400)
+        colors = ['blue', 'red', 'yellow', 'green', 'violet']
+
+        for rect in list_rectangles:
+            rectangle = Turtle()
+            rectangle.color(choice(colors))
+            rectangle.penup()
+            rectangle.goto(rect.x, rect.y)
+            rectangle.pendown()
+            for i in range(2):
+                rectangle.forward(rect.width)
+                rectangle.left(90)
+                rectangle.forward(rect.height)
+                rectangle.left(90)
+
+        for squa in list_squares:
+            square = Turtle()
+            square.color(choice(colors))
+            square.penup()
+            square.goto(squa.x, squa.y)
+            square.pendown()
+            for i in range(2):
+                square.forward(squa.width)
+                square.left(90)
+                square.forward(squa.height)
+                square.left(90)
+
+        screen.exitonclick()
