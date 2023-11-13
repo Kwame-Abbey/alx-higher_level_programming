@@ -105,8 +105,15 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """opens a window and draws all the Rectangles and Squares"""
+        """
+        opens a window and draws all the Rectangles and Squares
+
+        Args:
+            list_rectangles: list of rectangle instances
+            list_squares: list of square instances
+        """
         screen = Screen()
+        scree.title('Rectangles and Squares')
         screen.setup(width=600, height=400)
         colors = ['blue', 'red', 'yellow', 'green', 'violet']
 
