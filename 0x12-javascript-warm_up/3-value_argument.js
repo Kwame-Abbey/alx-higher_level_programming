@@ -5,6 +5,6 @@ const { argv } = require('process');
 
 if (argv[2]) {
   console.log(argv[2]);
-} else if (argv === undefined) {
+} else if (argv[2] === undefined) {
   console.log('No argument');
 }
