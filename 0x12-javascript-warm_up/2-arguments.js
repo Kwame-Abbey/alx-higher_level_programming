@@ -1,7 +1,7 @@
 #!/usr/bin/node
 // prints a message depending of the number of arguments passed
 
-const { argv } = require('node:process');
+const { argv } = require('process');
 
 const argsCount = argv.length - 2;
 
