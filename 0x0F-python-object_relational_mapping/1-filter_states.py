@@ -9,7 +9,9 @@ if __name__ == '__main__':
                          db=argv[3], port=3306)
 
     cur = db.cursor()
-    cur.execute("SELECT id, name FROM states WHERE states.name REGEXP '^N'")
+    cur.execute("SELECT * FROM states \
+                WHERE name LIKE BINARY 'N%' \
+                ORDER BY states.id ASC")
     rows = cur.fetchall()
 
     for row in rows:
