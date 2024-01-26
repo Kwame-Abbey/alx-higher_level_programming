@@ -14,7 +14,7 @@ if __name__ == '__main__':
         res = requests.post(endpoint, data=payload)
         data = res.json()
         if 'id' in data and 'name' in data:
-            print(f"[{data.get('id')] {data.get('name')}")
+            print(f"[{data.get('id')}] {data.get('name')}")
         else:
             print("No result")
     except ValueError:
