@@ -16,7 +16,7 @@ def find_peak(list_of_integers):
 def peak_find(list, left, right):
     """finds peak recursively using binary search"""
     if left == right:
-        return(list[right])
+        return (list[right])
     mid = (left + right) // 2
     if list[mid] > list[mid + 1]:
         return peak_find(list, left, mid)
